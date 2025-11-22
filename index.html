@@ -4,388 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco-City - Building Sustainable Urban Futures</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            color: #2e7d32;
-            overflow-x: hidden;
-        }
-
-        /* Falling Leaves Animation */
-        .leaf {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: #4caf50;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            opacity: 0.7;
-            animation: fall linear infinite;
-            z-index: 1;
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-                opacity: 0.3;
-            }
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(90deg, #1b5e20 0%, #4caf50 100%);
-            padding: 15px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            animation: slideDown 0.8s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .logo svg {
-            width: 50px;
-            height: 50px;
-            animation: rotate 10s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-
-        nav ul li a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: scale(1.1);
-        }
-
-        nav ul li a.active {
-            background: #66bb6a;
-        }
-
-        /* Main Content Styles */
-        main {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .page-section {
-            display: none;
-            animation: fadeIn 0.6s ease;
-        }
-
-        .page-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #2e7d32, #66bb6a);
-            padding: 80px 40px;
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 40px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            }
-            50% {
-                box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            }
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .content-card {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            transition: transform 0.3s;
-        }
-
-        .content-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-
-        .content-card h2 {
-            color: #1b5e20;
-            margin-bottom: 20px;
-            font-size: 32px;
-            border-bottom: 3px solid #4caf50;
-            padding-bottom: 10px;
-        }
-
-        .content-card h3 {
-            color: #2e7d32;
-            margin: 25px 0 15px;
-            font-size: 24px;
-        }
-
-        .content-card p {
-            line-height: 1.8;
-            color: #424242;
-            margin-bottom: 15px;
-        }
-
-        .content-card ul {
-            margin-left: 20px;
-            line-height: 2;
-            color: #424242;
-        }
-
-        .image-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 30px 0;
-        }
-
-        .grid-item {
-            background: linear-gradient(135deg, #66bb6a, #81c784);
-            padding: 30px;
-            border-radius: 15px;
-            color: white;
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .grid-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .grid-item h3 {
-            color: white;
-            margin-bottom: 15px;
-        }
-
-        /* Contact Form Styles */
-        .contact-form {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #1b5e20;
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #c8e6c9;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #4caf50;
-        }
-
-        .submit-btn {
-            background: linear-gradient(90deg, #2e7d32, #4caf50);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 25px;
-            font-size: 18px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        /* Footer Styles */
-        footer {
-            background: linear-gradient(90deg, #1b5e20 0%, #4caf50 100%);
-            color: white;
-            padding: 40px 20px;
-            margin-top: 60px;
-            animation: slideUp 0.8s ease;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-            }
-            to {
-                transform: translateY(0);
-            }
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .footer-content h3 {
-            margin-bottom: 15px;
-            font-size: 24px;
-        }
-
-        .footer-content p {
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-links a {
-            color: white;
-            font-size: 24px;
-            transition: transform 0.3s;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.3);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav ul {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-
-            .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .content-card {
-                padding: 20px;
-            }
-        }
-    </style>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Falling Leaves Background -->
     <div id="leaves-container"></div>
@@ -404,12 +27,12 @@
                 <span>Eco-City</span>
             </div>
             <ul>
-                <li><a href="#home" class="nav-link active" onclick="showPage('home')">Home</a></li>
-                <li><a href="#about" class="nav-link" onclick="showPage('about')">About Us</a></li>
-                <li><a href="#sdg" class="nav-link" onclick="showPage('sdg')">SDG 11</a></li>
-                <li><a href="#issues" class="nav-link" onclick="showPage('issues')">Issues</a></li>
-                <li><a href="#prevention" class="nav-link" onclick="showPage('prevention')">Prevention</a></li>
-                <li><a href="#contact" class="nav-link" onclick="showPage('contact')">Contact</a></li>
+                <li><a href="#home" class="nav-link active" onclick="showPage('home', this)">Home</a></li>
+                <li><a href="#about" class="nav-link" onclick="showPage('about', this)">About Us</a></li>
+                <li><a href="#sdg" class="nav-link" onclick="showPage('sdg', this)">SDG 11</a></li>
+                <li><a href="#issues" class="nav-link" onclick="showPage('issues', this)">Issues</a></li>
+                <li><a href="#prevention" class="nav-link" onclick="showPage('prevention', this)">Prevention</a></li>
+                <li><a href="#contact" class="nav-link" onclick="showPage('contact', this)">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -430,11 +53,11 @@
                 <p>Eco-City is dedicated to transforming urban landscapes into sustainable, livable, and resilient communities. We believe in creating cities that harmonize with nature while meeting the needs of growing populations.</p>
                 <div class="grid-container">
                     <div class="grid-item">
-                        <h3>🌍 Sustainable</h3>
+                        <h3>🌏 Sustainable</h3>
                         <p>Eco-friendly solutions for urban living</p>
                     </div>
                     <div class="grid-item">
-                        <h3>🏙️ Inclusive</h3>
+                        <h3>🌆 Inclusive</h3>
                         <p>Communities for everyone</p>
                     </div>
                     <div class="grid-item">
@@ -469,7 +92,7 @@
             </div>
         </section>
 
-        <!-- SDG 11 Page -->
+        <!-- SDG Page -->
         <section id="sdg" class="page-section">
             <div class="content-card">
                 <h2>SDG 11: Sustainable Cities and Communities</h2>
@@ -479,19 +102,19 @@
                 <h3>What is SDG 11?</h3>
                 <p>Sustainable Development Goal 11 aims to "Make cities and human settlements inclusive, safe, resilient and sustainable." It recognizes that urbanization presents both challenges and opportunities for sustainable development.</p>
                 
-                <h3>Key Targets of SDG 11</h3>
+                <h3>Key Targets of SDG 11:</h3>
                 <ul>
-                    <li><strong>Safe and affordable housing:</strong> Ensure access for all by 2030</li>
-                    <li><strong>Sustainable transport:</strong> Provide accessible and safe transportation systems</li>
-                    <li><strong>Inclusive urbanization:</strong> Enhance sustainable and inclusive urban planning</li>
-                    <li><strong>Cultural heritage:</strong> Protect and safeguard the world's cultural and natural heritage</li>
-                    <li><strong>Disaster reduction:</strong> Reduce deaths and economic losses from disasters</li>
-                    <li><strong>Environmental impact:</strong> Reduce the adverse per capita environmental impact of cities</li>
-                    <li><strong>Green spaces:</strong> Provide universal access to safe, inclusive green and public spaces</li>
+                    <li><b>Safe and affordable housing:</b> Ensure access for all by 2030</li>
+                    <li><b>Sustainable transport:</b> Provide accessible and safe transportation systems.</li>
+                    <li><b>Inclusive urbanization:</b> Enhance sustainable and inclusive urban planning.</li>
+                    <li><b>Cultural heritage:</b> Protect and safeguard the world's cultural and natural heritage.</li>
+                    <li><b>Disaster reduction:</b> Reduce deaths and economic losses from disasters.</li>
+                    <li><b>Environmental impact:</b> Reduce the adverse per capita environmental impact of cities.</li>
+                    <li><b>Green spaces:</b> Provide universal access to safe, inclusive green and public spaces.</li>
                 </ul>
-                
-                <h3>Why SDG 11 Matters</h3>
-                <p>More than half of the world's population lives in cities, and this number is expected to grow to 68% by 2050. Cities occupy just 3% of Earth's land but account for 60-80% of energy consumption and 75% of carbon emissions. Making cities sustainable is crucial for our planet's future.</p>
+                <h3>Why SDG 11 Matters?</h3>
+                <p>More than half of the world's population lives in cities, and this number is expected to grow to 68% by 2050. Cities occupy just 3% of Earth's land but account for 60-80% of energy consumption and 75% of carbon emissions. Making cities sustainable is crucial for our planet's future.
+                    </p>
             </div>
         </section>
 
@@ -507,9 +130,9 @@
                 <p>Urban areas face severe air quality issues due to vehicle emissions, industrial activities, and construction. Poor air quality affects public health and contributes to climate change.</p>
                 
                 <h3>🚗 Traffic Congestion</h3>
-                <p>Increasing vehicle numbers lead to traffic jams, wasted time, increased emissions, and reduced quality of life. Inadequate public transportation systems worsen the problem.</p>
+                <p>Increasing vehicle numbers lead to traffic jams, increased emissions, waste time and reduced quality of life. Inadequate public transportation systems worsen the problem.</p>
                 
-                <h3>🏚️ Housing Crisis</h3>
+                <h3> 🏠 Housing Crisis</h3>
                 <p>Rapid urbanization has created a shortage of affordable housing. Many people live in slums or informal settlements without basic services like clean water and sanitation.</p>
                 
                 <h3>♻️ Waste Management</h3>
@@ -518,7 +141,7 @@
                 <h3>💧 Water Scarcity</h3>
                 <p>Growing urban populations strain water resources. Many cities face water shortages, while others struggle with outdated infrastructure and water contamination.</p>
                 
-                <h3>🌡️ Urban Heat Islands</h3>
+                <h3>🔥 Urban Heat Islands</h3>
                 <p>Concrete and asphalt absorb heat, making cities significantly warmer than surrounding areas. This increases energy consumption for cooling and affects public health.</p>
             </div>
         </section>
@@ -530,31 +153,39 @@
                 <div class="image-container">
                     <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800" alt="Green Solutions">
                 </div>
-                
+
                 <h3>🚲 Sustainable Transportation</h3>
-                <p>Invest in public transit, cycling infrastructure, and pedestrian-friendly streets. Promote electric vehicles and car-sharing programs to reduce emissions and congestion.</p>
-                
-                <h3>🌳 Green Infrastructure</h3>
-                <p>Create urban parks, green roofs, and vertical gardens. Plant trees along streets to improve air quality, reduce heat islands, and enhance biodiversity.</p>
-                
+                <p>Invest in public transit, cycling infrastucture and foot-friendly streets.
+                    Promote electic vehicles and car sharing programs to reduce emossions and polution.
+                </p>
+
+                <h3>🌿 Green Infrastructure</h3>
+                <p>Create urban parks, green roofs, and Gardens.
+                    Plant trees along streets to improve air quality, reduce heat islands and enhance biodiversity.
+                </p>
+
                 <h3>♻️ Circular Economy</h3>
-                <p>Implement comprehensive recycling programs, composting initiatives, and waste-to-energy systems. Encourage businesses to adopt zero-waste practices.</p>
-                
+                <p>Encourage recycling programs, composting initiatives, zero-waste programs and waste-to-energy systems.
+                    Encourage business to adopt zero-waste practices.
+                </p>
+
                 <h3>🏡 Green Building</h3>
-                <p>Promote energy-efficient buildings with solar panels, rainwater harvesting, and sustainable materials. Enforce green building codes and certifications.</p>
-                
+                <p>Promote eco-friendly construction materials and energy-efficient designs of building with solar panels, rainwater harvesting and sustrainable materials.
+                    Enforce green building codes and certifications.
+                </p>
+
                 <h3>💡 Renewable Energy</h3>
-                <p>Transition to clean energy sources like solar, wind, and hydropower. Install smart grids to optimize energy distribution and reduce waste.</p>
-                
+                <p> Transition to clean energy sources like solar, wind, and hydropower. Install smart grids to optimize energy distribution and reduce waste.</p>
+
                 <h3>🌊 Water Management</h3>
                 <p>Upgrade water infrastructure, implement rainwater harvesting, and create wetlands for natural water filtration. Promote water conservation practices.</p>
-                
-                <h3>👥 Community Engagement</h3>
+                <h3>🤝 Community Engagement</h3>
                 <p>Involve citizens in urban planning decisions. Educate communities about sustainable practices and create programs that encourage participation in green initiatives.</p>
+                
             </div>
         </section>
 
-        <!-- Contact Us Page -->
+        <!-- Contact Page -->
         <section id="contact" class="page-section">
             <div class="content-card">
                 <h2>Contact Eco-City</h2>
@@ -563,28 +194,28 @@
                 <form class="contact-form" onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
+                        <input type="text" id="subject" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
+                        <textarea id="message" rows="6" required></textarea>
                     </div>
-                    
+
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
-                
-                <div style="margin-top: 40px;">
+
+                <div style="margin-top:40px;">
                     <h3>Get In Touch</h3>
                     <p>📧 Email: Eco-city@gmail.com</p>
                     <p>📞 Phone: +91 897543****</p>
@@ -601,67 +232,16 @@
             <p>Building Sustainable Communities for a Better Tomorrow</p>
             <p>&copy; 2024 Eco-City. All Rights Reserved.</p>
             <div class="social-links">
-                <a href="#" title="Facebook">📘</a>
-                <a href="#" title="Twitter">🐦</a>
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="LinkedIn">💼</a>
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📷</a>
+                <a href="#">💼</a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Create falling leaves animation
-        function createLeaf() {
-            const leaf = document.createElement('div');
-            leaf.className = 'leaf';
-            leaf.style.left = Math.random() * 100 + '%';
-            leaf.style.animationDuration = (Math.random() * 10 + 10) + 's';
-            leaf.style.animationDelay = Math.random() * 5 + 's';
-            document.getElementById('leaves-container').appendChild(leaf);
-            
-            // Remove leaf after animation completes
-            setTimeout(() => {
-                leaf.remove();
-            }, 20000);
-        }
+    <!-- JS File -->
+    <script src="script.js"></script>
 
-        // Generate leaves continuously
-        setInterval(createLeaf, 500);
-
-        // Initial leaves
-        for (let i = 0; i < 15; i++) {
-            createLeaf();
-        }
-
-        // Function to show different pages
-        function showPage(pageName) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-
-            // Show selected section
-            document.getElementById(pageName).classList.add('active');
-
-            // Update active nav link
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-            });
-            event.target.classList.add('active');
-
-            // Scroll to top smoothly
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Handle form submission
-        function handleSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            alert(`Thank you, ${name}! Your message has been received. We'll get back to you soon!`);
-            event.target.reset();
-        }
-    </script>
 </body>
 </html>
