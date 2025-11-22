@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,29 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Error + Success Styling */
+        .error {
+            font-size: 13px;
+            color: red;
+            margin-top: 4px;
+        }
+
+        .success-msg {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 6px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Falling Leaves Background -->
     <div id="leaves-container"></div>
 
     <!-- Header -->
@@ -18,21 +38,21 @@
         <nav>
             <div class="logo">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" fill="#81c784"/>
-                    <path d="M50 20 L50 80 M30 40 L50 20 L70 40" stroke="white" stroke-width="4" fill="none"/>
-                    <circle cx="35" cy="55" r="8" fill="#fff"/>
-                    <circle cx="50" cy="60" r="8" fill="#fff"/>
-                    <circle cx="65" cy="55" r="8" fill="#fff"/>
+                    <circle cx="50" cy="50" r="45" fill="#81c784" />
+                    <path d="M50 20 L50 80 M30 40 L50 20 L70 40" stroke="white" stroke-width="4" fill="none" />
+                    <circle cx="35" cy="55" r="8" fill="#fff" />
+                    <circle cx="50" cy="60" r="8" fill="#fff" />
+                    <circle cx="65" cy="55" r="8" fill="#fff" />
                 </svg>
                 <span>Eco-City</span>
             </div>
             <ul>
-                <li><a href="#home" class="nav-link active" onclick="showPage('home', this)">Home</a></li>
-                <li><a href="#about" class="nav-link" onclick="showPage('about', this)">About Us</a></li>
-                <li><a href="#sdg" class="nav-link" onclick="showPage('sdg', this)">SDG 11</a></li>
-                <li><a href="#issues" class="nav-link" onclick="showPage('issues', this)">Issues</a></li>
-                <li><a href="#prevention" class="nav-link" onclick="showPage('prevention', this)">Prevention</a></li>
-                <li><a href="#contact" class="nav-link" onclick="showPage('contact', this)">Contact</a></li>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#sdg" class="nav-link">SDG 11</a></li>
+                <li><a href="#issues" class="nav-link">Issues</a></li>
+                <li><a href="#prevention" class="nav-link">Prevention</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -48,9 +68,11 @@
             <div class="content-card">
                 <h2>Creating Sustainable Urban Futures</h2>
                 <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800" alt="Sustainable City">
+                    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800"
+                        alt="Sustainable City">
                 </div>
-                <p>Eco-City is dedicated to transforming urban landscapes into sustainable, livable, and resilient communities. We believe in creating cities that harmonize with nature while meeting the needs of growing populations.</p>
+                <p>Eco-City is dedicated to transforming urban landscapes into sustainable, livable, and resilient
+                    communities.</p>
                 <div class="grid-container">
                     <div class="grid-item">
                         <h3>🌏 Sustainable</h3>
@@ -68,7 +90,7 @@
             </div>
         </section>
 
-        <!-- About Us Page -->
+        <!-- About -->
         <section id="about" class="page-section">
             <div class="content-card">
                 <h2>About Eco-City</h2>
@@ -76,144 +98,81 @@
                     <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800" alt="Green City">
                 </div>
                 <h3>Our Mission</h3>
-                <p>At Eco-City, our mission is to pioneer sustainable urban development that balances environmental conservation with modern living. We work towards creating cities where nature and technology coexist harmoniously.</p>
-                
-                <h3>Our Vision</h3>
-                <p>We envision a world where every city is a model of sustainability, offering clean air, green spaces, efficient transportation, and affordable housing for all residents. Our goal is to make sustainable living the standard, not the exception.</p>
-                
-                <h3>What We Do</h3>
-                <ul>
-                    <li>Promote green architecture and sustainable building practices</li>
-                    <li>Advocate for clean energy and efficient public transportation</li>
-                    <li>Support community gardens and urban green spaces</li>
-                    <li>Educate citizens about sustainable lifestyle choices</li>
-                    <li>Partner with governments and organizations for policy change</li>
-                </ul>
+                <p>We pioneer sustainable urban development where nature and technology coexist.</p>
             </div>
         </section>
 
-        <!-- SDG Page -->
+        <!-- SDG -->
         <section id="sdg" class="page-section">
             <div class="content-card">
                 <h2>SDG 11: Sustainable Cities and Communities</h2>
                 <div class="image-container">
-                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800" alt="Modern Sustainable City">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+                        alt="Modern Sustainable City">
                 </div>
-                <h3>What is SDG 11?</h3>
-                <p>Sustainable Development Goal 11 aims to "Make cities and human settlements inclusive, safe, resilient and sustainable." It recognizes that urbanization presents both challenges and opportunities for sustainable development.</p>
-                
-                <h3>Key Targets of SDG 11:</h3>
-                <ul>
-                    <li><b>Safe and affordable housing:</b> Ensure access for all by 2030</li>
-                    <li><b>Sustainable transport:</b> Provide accessible and safe transportation systems.</li>
-                    <li><b>Inclusive urbanization:</b> Enhance sustainable and inclusive urban planning.</li>
-                    <li><b>Cultural heritage:</b> Protect and safeguard the world's cultural and natural heritage.</li>
-                    <li><b>Disaster reduction:</b> Reduce deaths and economic losses from disasters.</li>
-                    <li><b>Environmental impact:</b> Reduce the adverse per capita environmental impact of cities.</li>
-                    <li><b>Green spaces:</b> Provide universal access to safe, inclusive green and public spaces.</li>
-                </ul>
-                <h3>Why SDG 11 Matters?</h3>
-                <p>More than half of the world's population lives in cities, and this number is expected to grow to 68% by 2050. Cities occupy just 3% of Earth's land but account for 60-80% of energy consumption and 75% of carbon emissions. Making cities sustainable is crucial for our planet's future.
-                    </p>
+                <p>SDG 11 aims to make cities inclusive, safe, resilient, and sustainable.</p>
             </div>
         </section>
 
-        <!-- Issues Page -->
+        <!-- Issues -->
         <section id="issues" class="page-section">
             <div class="content-card">
                 <h2>Urban Sustainability Challenges</h2>
                 <div class="image-container">
                     <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800" alt="Urban Pollution">
                 </div>
-                
-                <h3>🏭 Air Pollution</h3>
-                <p>Urban areas face severe air quality issues due to vehicle emissions, industrial activities, and construction. Poor air quality affects public health and contributes to climate change.</p>
-                
-                <h3>🚗 Traffic Congestion</h3>
-                <p>Increasing vehicle numbers lead to traffic jams, increased emissions, waste time and reduced quality of life. Inadequate public transportation systems worsen the problem.</p>
-                
-                <h3> 🏠 Housing Crisis</h3>
-                <p>Rapid urbanization has created a shortage of affordable housing. Many people live in slums or informal settlements without basic services like clean water and sanitation.</p>
-                
-                <h3>♻️ Waste Management</h3>
-                <p>Cities generate massive amounts of waste daily. Improper waste disposal pollutes land and water, creating health hazards and environmental degradation.</p>
-                
-                <h3>💧 Water Scarcity</h3>
-                <p>Growing urban populations strain water resources. Many cities face water shortages, while others struggle with outdated infrastructure and water contamination.</p>
-                
-                <h3>🔥 Urban Heat Islands</h3>
-                <p>Concrete and asphalt absorb heat, making cities significantly warmer than surrounding areas. This increases energy consumption for cooling and affects public health.</p>
+                <p>Cities worldwide face pollution, congestion, waste, and water scarcity challenges.</p>
             </div>
         </section>
 
-        <!-- Prevention Page -->
+        <!-- Prevention -->
         <section id="prevention" class="page-section">
             <div class="content-card">
                 <h2>Solutions for Sustainable Cities</h2>
                 <div class="image-container">
                     <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800" alt="Green Solutions">
                 </div>
-
-                <h3>🚲 Sustainable Transportation</h3>
-                <p>Invest in public transit, cycling infrastucture and foot-friendly streets.
-                    Promote electric vehicles and car sharing programs to reduce emissions and polution.
-                </p>
-
-                <h3>🌿 Green Infrastructure</h3>
-                <p>Create urban parks, green roofs, and Gardens.
-                    Plant trees along streets to improve air quality, reduce heat islands and enhance biodiversity.
-                </p>
-
-                <h3>♻️ Circular Economy</h3>
-                <p>Encourage recycling programs, composting initiatives, zero-waste programs and waste-to-energy systems.
-                    Encourage business to adopt zero-waste practices.
-                </p>
-
-                <h3>🏡 Green Building</h3>
-                <p>Promote eco-friendly construction materials and energy-efficient designs of building with solar panels, rainwater harvesting and sustrainable materials.
-                    Enforce green building codes and certifications.
-                </p>
-
-                <h3>💡 Renewable Energy</h3>
-                <p> Transition to clean energy sources like solar, wind, and hydropower. Install smart grids to optimize energy distribution and reduce waste.</p>
-
-                <h3>🌊 Water Management</h3>
-                <p>Upgrade water infrastructure, implement rainwater harvesting, and create wetlands for natural water filtration. Promote water conservation practices.</p>
-                <h3>🤝 Community Engagement</h3>
-                <p>Involve citizens in urban planning decisions. Educate communities about sustainable practices and create programs that encourage participation in green initiatives.</p>
-                
+                <p>Green infrastructure, renewable energy, and sustainable transport can transform cities.</p>
             </div>
         </section>
 
-        <!-- Contact Page -->
+        <!-- Contact -->
         <section id="contact" class="page-section">
             <div class="content-card">
                 <h2>Contact Eco-City</h2>
-                <p>Have questions or want to join our mission? We'd love to hear from you!</p>
-                
-                <form class="contact-form" onsubmit="handleSubmit(event)">
+                <p>Have questions or want to join our mission?</p>
+
+                <form id="contactForm" class="contact-form" onsubmit="return validateForm()">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" required>
+                        <input type="text" id="name" name="name">
+                        <small class="error"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name="email">
+                        <small class="error"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" required>
+                        <input type="text" id="subject" name="subject">
+                        <small class="error"></small>
                     </div>
 
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" rows="6" required></textarea>
+                        <textarea id="message" name="message" rows="6"></textarea>
+                        <small class="error"></small>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" value="submit" class="submit-btn">Send Message</button>
                 </form>
+
+                <div id="successMessage" class="success-msg">
+                    ⭐ Thank you! We received your message and will contact you soon.
+                </div>
 
                 <div style="margin-top:40px;">
                     <h3>Get In Touch</h3>
@@ -231,18 +190,432 @@
             <h3>Eco-City</h3>
             <p>Building Sustainable Communities for a Better Tomorrow</p>
             <p>&copy; 2024 Eco-City. All Rights Reserved.</p>
-            <div class="social-links">
-                <a href="#">📘</a>
-                <a href="#">🐦</a>
-                <a href="#">📷</a>
-                <a href="#">💼</a>
-            </div>
         </div>
     </footer>
 
-    <!-- JS File -->
-    <script src="script.js"></script>
+    <!-- Improved JavaScript -->
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            if (name == "") {
+                alert("Please enter your Full Name.");
+                return false;
+            }
+            let email = document.getElementById("email").value;
+            if (email == "") {
+                alert("Please enter your Email.");
+                return false;
+            }
+            let Subject = document.getElementById("subject").value;
+            if (Subject == "") {
+                alert("Please enter Subject.");
+                return false;
+            }
+            let Message = document.getElementById("message").value;
+            if (Message == "") {
+                alert("Please enter your Message.");
+                return false;
+            }
+            alert("Form Submitted succesfully");
+            return true;
+        }
+
+        // Falling leaves
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            leaf.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('leaves-container').appendChild(leaf);
+            setTimeout(() => leaf.remove(), 20000);
+        }
+        setInterval(createLeaf, 500);
+        for (let i = 0; i < 15; i++) createLeaf();
+
+        // Navigation switching
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const page = this.getAttribute('href').substring(1);
+
+                document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+
+                document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+                this.classList.add('active');
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Form Validation
+        const form = document.getElementById("contactForm");
+        const successMsg = document.getElementById("successMessage");
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showError(input, message) {
+            const small = input.parentElement.querySelector("small");
+            small.textContent = message;
+            input.style.borderColor = "red";
+        }
+
+        function clearError(input) {
+            const small = input.parentElement.querySelector("small");
+            small.textContent = "";
+            input.style.borderColor = "#ccc";
+        }
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            let valid = true;
+
+            const name = form.name;
+            const email = form.email;
+            const subject = form.subject;
+            const message = form.message;
+
+            if (name.value.trim().length < 3) {
+                showError(name, "Minimum 3 characters required.");
+                valid = false;
+            } else clearError(name);
+
+            if (!isValidEmail(email.value)) {
+                showError(email, "Invalid email address.");
+                valid = false;
+            } else clearError(email);
+
+            if (subject.value.trim().length < 3) {
+                showError(subject, "Minimum 3 characters required.");
+                valid = false;
+            } else clearError(subject);
+
+            if (message.value.trim().length < 10) {
+                showError(message, "Minimum 10 characters required.");
+                valid = false;
+            } else clearError(message);
+
+            if (valid) {
+                successMsg.style.display = "block";
+                form.reset();
+                setTimeout(() => successMsg.style.display = "none", 4000);
+            }
+        });
+    </script>
 
 </body>
-</html>
 
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-City - Building Sustainable Urban Futures</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Error + Success Styling */
+        .error {
+            font-size: 13px;
+            color: red;
+            margin-top: 4px;
+        }
+
+        .success-msg {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            background: #d4edda;
+            color: #155724;
+            border-radius: 6px;
+            border: 1px solid #c3e6cb;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="leaves-container"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#81c784" />
+                    <path d="M50 20 L50 80 M30 40 L50 20 L70 40" stroke="white" stroke-width="4" fill="none" />
+                    <circle cx="35" cy="55" r="8" fill="#fff" />
+                    <circle cx="50" cy="60" r="8" fill="#fff" />
+                    <circle cx="65" cy="55" r="8" fill="#fff" />
+                </svg>
+                <span>Eco-City</span>
+            </div>
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#sdg" class="nav-link">SDG 11</a></li>
+                <li><a href="#issues" class="nav-link">Issues</a></li>
+                <li><a href="#prevention" class="nav-link">Prevention</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <h1>🌱 Welcome to Eco-City</h1>
+                <p>Building Sustainable and Inclusive Urban Communities for a Greener Tomorrow</p>
+            </div>
+            <div class="content-card">
+                <h2>Creating Sustainable Urban Futures</h2>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800"
+                        alt="Sustainable City">
+                </div>
+                <p>Eco-City is dedicated to transforming urban landscapes into sustainable, livable, and resilient
+                    communities.</p>
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h3>🌏 Sustainable</h3>
+                        <p>Eco-friendly solutions for urban living</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>🌆 Inclusive</h3>
+                        <p>Communities for everyone</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>♻️ Resilient</h3>
+                        <p>Prepared for future challenges</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section id="about" class="page-section">
+            <div class="content-card">
+                <h2>About Eco-City</h2>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800" alt="Green City">
+                </div>
+                <h3>Our Mission</h3>
+                <p>We pioneer sustainable urban development where nature and technology coexist.</p>
+            </div>
+        </section>
+
+        <!-- SDG -->
+        <section id="sdg" class="page-section">
+            <div class="content-card">
+                <h2>SDG 11: Sustainable Cities and Communities</h2>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800"
+                        alt="Modern Sustainable City">
+                </div>
+                <p>SDG 11 aims to make cities inclusive, safe, resilient, and sustainable.</p>
+            </div>
+        </section>
+
+        <!-- Issues -->
+        <section id="issues" class="page-section">
+            <div class="content-card">
+                <h2>Urban Sustainability Challenges</h2>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800" alt="Urban Pollution">
+                </div>
+                <p>Cities worldwide face pollution, congestion, waste, and water scarcity challenges.</p>
+            </div>
+        </section>
+
+        <!-- Prevention -->
+        <section id="prevention" class="page-section">
+            <div class="content-card">
+                <h2>Solutions for Sustainable Cities</h2>
+                <div class="image-container">
+                    <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=800" alt="Green Solutions">
+                </div>
+                <p>Green infrastructure, renewable energy, and sustainable transport can transform cities.</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="page-section">
+            <div class="content-card">
+                <h2>Contact Eco-City</h2>
+                <p>Have questions or want to join our mission?</p>
+
+                <form id="contactForm" class="contact-form" onsubmit="return validateForm()">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name">
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject">
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6"></textarea>
+                        <small class="error"></small>
+                    </div>
+
+                    <button type="submit" value="submit" class="submit-btn">Send Message</button>
+                </form>
+
+                <div id="successMessage" class="success-msg">
+                    ⭐ Thank you! We received your message and will contact you soon.
+                </div>
+
+                <div style="margin-top:40px;">
+                    <h3>Get In Touch</h3>
+                    <p>📧 Email: Eco-city@gmail.com</p>
+                    <p>📞 Phone: +91 897543****</p>
+                    <p>📍 Address: 123 Green Street, Eco District, Sustainable City 12345</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Eco-City</h3>
+            <p>Building Sustainable Communities for a Better Tomorrow</p>
+            <p>&copy; 2024 Eco-City. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Improved JavaScript -->
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            if (name == "") {
+                alert("Please enter your Full Name.");
+                return false;
+            }
+            let email = document.getElementById("email").value;
+            if (email == "") {
+                alert("Please enter your Email.");
+                return false;
+            }
+            let Subject = document.getElementById("subject").value;
+            if (Subject == "") {
+                alert("Please enter Subject.");
+                return false;
+            }
+            let Message = document.getElementById("message").value;
+            if (Message == "") {
+                alert("Please enter your Message.");
+                return false;
+            }
+            alert("Form Submitted succesfully");
+            return true;
+        }
+
+        // Falling leaves
+        function createLeaf() {
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf';
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            leaf.style.animationDelay = Math.random() * 5 + 's';
+            document.getElementById('leaves-container').appendChild(leaf);
+            setTimeout(() => leaf.remove(), 20000);
+        }
+        setInterval(createLeaf, 500);
+        for (let i = 0; i < 15; i++) createLeaf();
+
+        // Navigation switching
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const page = this.getAttribute('href').substring(1);
+
+                document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active'));
+                document.getElementById(page).classList.add('active');
+
+                document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+                this.classList.add('active');
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Form Validation
+        const form = document.getElementById("contactForm");
+        const successMsg = document.getElementById("successMessage");
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function showError(input, message) {
+            const small = input.parentElement.querySelector("small");
+            small.textContent = message;
+            input.style.borderColor = "red";
+        }
+
+        function clearError(input) {
+            const small = input.parentElement.querySelector("small");
+            small.textContent = "";
+            input.style.borderColor = "#ccc";
+        }
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            let valid = true;
+
+            const name = form.name;
+            const email = form.email;
+            const subject = form.subject;
+            const message = form.message;
+
+            if (name.value.trim().length < 3) {
+                showError(name, "Minimum 3 characters required.");
+                valid = false;
+            } else clearError(name);
+
+            if (!isValidEmail(email.value)) {
+                showError(email, "Invalid email address.");
+                valid = false;
+            } else clearError(email);
+
+            if (subject.value.trim().length < 3) {
+                showError(subject, "Minimum 3 characters required.");
+                valid = false;
+            } else clearError(subject);
+
+            if (message.value.trim().length < 10) {
+                showError(message, "Minimum 10 characters required.");
+                valid = false;
+            } else clearError(message);
+
+            if (valid) {
+                successMsg.style.display = "block";
+                form.reset();
+                setTimeout(() => successMsg.style.display = "none", 4000);
+            }
+        });
+    </script>
+
+</body>
+
+</html>
